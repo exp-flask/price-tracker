@@ -40,27 +40,44 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
-##From Scratch
+## From Scratch
 New Next.js project:
-```npx create-next-app@latest ./```
+```
+npx create-next-app@latest ./
+```
 `./` specified to not create under a new project name, instead create on current dir (avoids duplication)
+```
+√ Would you like to use TypeScript? ... No / [Yes]
+√ Would you like to use ESLint? ... No / [Yes]
+√ Would you like to use Tailwind CSS? ... No / [Yes]
+√ Would you like to use `src/` directory? ... [No] / Yes
+√ Would you like to use App Router? (recommended) ... [No] / Yes
+√ Would you like to customize the default import alias (@/*)? ... [No] / Yes
+```
 
 
-##Node Version and fnm
+## Node Version and fnm
 There are a couple node version managers out there like `nvm` and `fnm`. This project uses the Rust based `fnm`, which focuses on project dir scope rather than globally like nvm.
 
-###Setting up fnm on this local project
+### Setting up fnm on this local project
 If not already installed, install via package manager: `choco install fnm` (Windows) or `brew install fnm` (macOS)
 
 Set desired node version in a new .node-version file: 
-```echo "v21.7.2" > .node-version```
+```
+echo "v21.7.2" > .node-version
+```
 (optional) peruse available versions `fnm list-remote` and `fnm install [version]` if your not sure
 
 auto-switch to node version via fnm when navigating to directory:
+
 Windows (PowerShell)
-```fnm env --use-on-cd | Out-String | Invoke-Expression```
+```
+fnm env --use-on-cd | Out-String | Invoke-Expression
+```
 macOS (zsh)
-```eval "$(fnm env --use-on-cd)"```
+```
+eval "$(fnm env --use-on-cd)"
+```
 If version not already installed, answer `y` to prompt
 
 Check versions were updated with `fnm current`, `node -v`, `npm -v`
